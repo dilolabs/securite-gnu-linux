@@ -1,5 +1,9 @@
 Ce dépôt est un partage de bonnes pratiques de sécurisation de systèmes GNU/Linux dédiés notamment à de l'hébergement web.
 
+## Recommandations de configuration
+
+Dilolabs recommande de suivre le guide de l'ANSSI ["Recommandations de configuration d'un système GNU/Linux"](https://www.ssi.gouv.fr/uploads/2016/01/linux_configuration-fr-v1.2.pdf).
+
 ## Durcissement SSH
 
 Dilolabs recommande de suivre la note technique de l'ANSSI ["Recommandations pour un usage sécurisé d’(Open)SSH"](https://www.ssi.gouv.fr/uploads/2014/01/NT_OpenSSH.pdf).
