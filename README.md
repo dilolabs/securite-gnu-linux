@@ -6,7 +6,9 @@ Dilolabs recommande de suivre le guide de l'ANSSI ["Recommandations de sécurit�
 
 ## SSH
 
-Dilolabs recommande de suivre la note technique de l'ANSSI ["Recommandations pour un usage sécurisé d’(Open)SSH"](https://www.ssi.gouv.fr/guide/recommandations-pour-un-usage-securise-dopenssh/).
+Dilolabs recommande :
+- de suivre la note technique de l'ANSSI ["Recommandations pour un usage sécurisé d’(Open)SSH"](https://www.ssi.gouv.fr/guide/recommandations-pour-un-usage-securise-dopenssh/)
+- de lire le [fichier de configuration proposé](https://github.com/dilolabs/securite-gnu-linux/blob/main/etc/ssh/sshd_config)
 
 ## Pare-feu
 
