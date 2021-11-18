@@ -1,18 +1,33 @@
-# Package generated configuration file
-# See the sshd_config(5) manpage for details
-
-# What ports, IPs and protocols we listen for
+# On choisit le port du serveur SSH
 Port 22
-# Use these options to restrict which interfaces/protocols sshd will bind to
-#ListenAddress ::
-#ListenAddress 0.0.0.0
+
+# On s'assure que seul SSH 2 est utilisé
 Protocol 2
-# HostKeys for protocol version 2
+
+# On écarte les algorithmes faibles
+Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+MACs    hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com
+
+# Au bout de 2 essais ratés, le client attend 30 secondes
+MaxAuthTries 2
+LoginGraceTime 30
+
+# On affiche la précédente connexion
+PrintLastLog yes
+
+# On interdit l'accès par mot de passe
+PasswordAuthentication no
+
+# On interdit l'accès à root
+PermitRootLogin no
+
+# On n'autorise que les clés ECDSA
 #HostKey /etc/ssh/ssh_host_rsa_key
 #HostKey /etc/ssh/ssh_host_dsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
 #HostKey /etc/ssh/ssh_host_ed25519_key
-#Privilege Separation is turned on for security
+
+# Privilege Separation is turned on for security
 UsePrivilegeSeparation sandbox
 
 # Lifetime and size of ephemeral version 1 server key
@@ -23,10 +38,7 @@ ServerKeyBits 1024
 SyslogFacility AUTH
 LogLevel INFO
 
-# Authentication:
-MaxAuthTries 2
-LoginGraceTime 30
-PermitRootLogin no
+# Authentication
 StrictModes yes
 
 RSAAuthentication yes
@@ -35,10 +47,13 @@ PubkeyAuthentication yes
 
 # Don't read the user's ~/.rhosts and ~/.shosts files
 IgnoreRhosts yes
+
 # For this to work you will also need host keys in /etc/ssh_known_hosts
 RhostsRSAAuthentication no
+
 # similar for protocol version 2
 HostbasedAuthentication no
+
 # Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
 #IgnoreUserKnownHosts yes
 
@@ -48,9 +63,6 @@ PermitEmptyPasswords no
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
 ChallengeResponseAuthentication no
-
-# Change to no to disable tunnelled clear text passwords
-PasswordAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
@@ -87,7 +99,3 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
-
-Ciphers aes256-ctr,aes192-ctr,aes128-ctr
-MACs    hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com
-
