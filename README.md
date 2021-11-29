@@ -31,3 +31,7 @@ Dilolabs recommande d'installer [fail2ban](https://www.fail2ban.org/wiki/index.p
 ## Certificats SSL
 
 Dilolabs recommande d'utiliser [Certbot](https://certbot.eff.org/).
+
+## Hardening
+
+Dilolabs recommande d'utiliser [CIS Debian 9/10 Hardening](https://github.com/ovh/debian-cis), les scripts d'OVHcloud basés sur les recommandations de [cisecurity.org](https://www.cisecurity.org/)
